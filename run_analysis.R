@@ -2,6 +2,7 @@
 
 ## Coursera Getting and Cleaning Data Course Project
 
+
 # runAnalysis.r File Description:
 
 # This script will perform the following steps on the UCI HAR Dataset downloaded from 
@@ -21,7 +22,7 @@ rm(list=ls())
 # 1. Merge the training and the test sets to create one data set.
 
 #set working directory to the location where the UCI HAR Dataset was unzipped
-setwd('/Users/Kingston/R-Code/');
+setwd('/Users/heather/Documents/UCI HAR Dataset/');
 
 # Read in the data from files
 features     = read.table('./features.txt',header=FALSE); #imports features.txt
