@@ -25,9 +25,13 @@ Triaxial Angular velocity from the gyroscope.
 A 561-feature vector with time and frequency domain variables.
 Its activity label.
 An identifier of the subject who carried out the experiment.
-Section 1. Merge the training and the test sets to create one data set.
 
-After setting the source directory for the files, read into tables the data located in
+Section 1. Merge the training and the test sets to create one dataset.
+
+1) Use setwd() function to set the source directory for the files;
+2) Use read.table() function to read files below into tables;
+3) Assign column names;
+4) Use cbind() and rbind() function to combine training and test sets to create one dataset
 
 features.txt
 activity_labels.txt
@@ -41,16 +45,17 @@ Assign column names and merge to create one data set.
 
 Section 2. Extract only the measurements on the mean and standard deviation for each measurement.
 
-Create a logcal vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others. Subset this data to keep only the necessary columns.
+1) Use the grepl() function to create a logical vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others;
+2) Subset the dataset using the the logical vector developed above to keep only the necessary columns.
 
 Section 3. Use descriptive activity names to name the activities in the data set
 
-Merge data subset with the activityType table to cinlude the descriptive activity names
+Use the merge() function to merge data subset with the activityType table to include the descriptive activity names
 
 Section 4. Appropriately label the data set with descriptive activity names.
 
 Use gsub function for pattern replacement to clean up the data labels.
 
 Section 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-Per the project instructions, we need to produce only a data set with the average of each veriable for each activity and subject
+1) Use the aggregate() function to calculate the average of each veriable for each activity and subject
+Use the write.table() funcation to produce the final tidy dataset
